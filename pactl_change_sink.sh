@@ -11,4 +11,3 @@ done
 sed -i -e 's/set \$audio_sink .*/set \$audio_sink '$newSink'/' ~/.config/i3/config
 # Changes sink in polybar so polybar will show correct audio sink volume
 sed -i -e 's/sink = .*/sink = '$newSink'/' ~/.config/polybar/config
-echo $newSink
