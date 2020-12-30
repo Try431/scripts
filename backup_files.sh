@@ -13,7 +13,7 @@ dst=/media/isaac/Large_External/Backup/
 
 if [[ ! $SKIP ]]; then
 	echo "Backing up files to /media/isaac/Data/UbuntuImageBackup..."
-	sudo rsync -aAX / --update --verbose --exclude-from="/home/isaac/exclude-backup.txt" /media/isaac/Data/UbuntuImageBackup/
+	sudo rsync -aAX / --update --verbose --exclude-from="/home/isaac/scripts/random-scripts/backup/exclude-backup.txt" /media/isaac/Data/UbuntuImageBackup/
 	echo "Finished backing up files to /media/isaac/Data/UbuntuImageBackup"
 	echo "Sleeping for 3 seconds"
 else
