@@ -6,7 +6,7 @@ COUNT=0
 while [ -z "$CAVA_SINK_INDEX" ]
 do
 	# this sleep is necessary because it takes a second for the new sink to update
-	sleep 1s
+	sleep 2s
 	# https://stackoverflow.com/a/48070534/3614985
 	CAVA_SINK_INDEX=`pacmd list-source-outputs |  tr '\n' '\r' | perl -pe 's/ *index: ([0-9]+).+?application\.name = "([^\r]+)"\r.+?(?=index:|$)/\2:\1\r/g' | tr '\r' '\n' | grep cava | cut -f2 -d":"`
 	COUNT=$((COUNT+1))
