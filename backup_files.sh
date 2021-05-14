@@ -13,7 +13,7 @@ dst=/media/isaac/Large_External/Backup/
 
 if [[ ! $SKIP ]]; then
 	echo "Backing up files to /media/isaac/Data/UbuntuImageBackup..."
-	sudo rsync -aAX / --update --verbose --exclude-from="/home/isaac/scripts/random-scripts/backup/exclude-backup.txt" /media/isaac/Data/UbuntuImageBackup/
+	sudo rsync -aAX / --update --cvs-exclude --exclude-from="/home/isaac/scripts/random-scripts/backup/exclude-backup.txt" /media/isaac/Data/UbuntuImageBackup/
 	echo "Finished backing up files to /media/isaac/Data/UbuntuImageBackup"
 	echo "Sleeping for 3 seconds"
 else
@@ -58,10 +58,10 @@ if [[ $retry_count -eq 3 ]]; then
 fi
 
 echo "Starting backup of ${src_1} to ${dst}..."
-rsync -a --verbose --update --no-specials --no-devices --no-links --exclude={"UbuntuImageBackup","Shows","Movies",".git/*",".vscode/*","node_modules/*"} $src_1 $dst
+rsync -a --update --no-specials --no-devices --no-links --cvs-exclude --exclude={"UbuntuImageBackup","Shows","Movies",".git/*",".vscode/*","node_modules/*"} $src_1 $dst
 echo "Finished backing up ${src_1} to ${dst}"
 echo "Sleeping for 5 seconds"
 sleep 5
 echo "Starting backup of ${src_2} to ${dst}..."
-rsync -a --verbose --update --no-specials --no-devices --no-links --exclude={"UbuntuImageBackup/home/isaac/Documents","UbuntuImageBackup/home/isaac/Music","UbuntuImageBackup/home/isaac/Pictures",".git/*",".vscode/*","node_modules/*","UbuntuImageBackup/lib/modules","UbuntuImageBackup/var/lib/dpkg"} $src_2 $dst
+rsync -a --update --no-specials --no-devices --no-links --cvs-exclude --exclude={"UbuntuImageBackup/home/isaac/Documents","UbuntuImageBackup/home/isaac/Music","UbuntuImageBackup/home/isaac/Pictures",".git/*",".vscode/*","node_modules/*","UbuntuImageBackup/lib/modules","UbuntuImageBackup/var/lib/dpkg","UbuntuImageBackup/lib/firmware"} $src_2 $dst
 echo "Finished backing up ${src_2} to ${dst}"

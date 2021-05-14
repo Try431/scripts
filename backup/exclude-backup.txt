@@ -29,7 +29,7 @@
 /home/isaac/.cache
 /home/isaac/.go
 /home/isaac/.npm
-/home/isaac/workspace/PRISM/att-vod-pocs
+/home/isaac/.eclipse
 /home/isaac/workspace/Cyclops/vodkaman-portal
 /home/isaac/.atom
 /home/isaac/.config/google-chrome
@@ -47,3 +47,5 @@
 /home/isaac/snap
 /home/isaac/.vscode
 /home/isaac/.steam
+/home/isaac/Music
+/home/isaac/Pictures
