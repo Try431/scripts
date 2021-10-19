@@ -6,7 +6,11 @@ while [ "$#" -gt 0 ]; do
 		-l|--local-only) LOCAL=true; shift $#;;
 	esac
 done
-# d=$(date +'%m_%d_%Y')
+
+d=$(date +'%m_%d_%Y')
+touch /media/isaac/Large_External/Backup/last_backup_date.txt
+echo $d > /media/isaac/Large_External/Backup/last_backup_date.txt
+
 src_1=/media/isaac/Data/
 src_2=/media/isaac/Data/UbuntuImageBackup
 dst=/media/isaac/Large_External/Backup/
@@ -65,3 +69,4 @@ sleep 5
 echo "Starting backup of ${src_2} to ${dst}..."
 rsync -a --update --no-specials --no-devices --no-links --cvs-exclude --exclude={"UbuntuImageBackup/home/isaac/Documents","UbuntuImageBackup/home/isaac/Music","UbuntuImageBackup/home/isaac/Pictures",".git/*",".vscode/*","node_modules/*","UbuntuImageBackup/lib/modules","UbuntuImageBackup/var/lib/dpkg","UbuntuImageBackup/lib/firmware"} $src_2 $dst
 echo "Finished backing up ${src_2} to ${dst}"
+

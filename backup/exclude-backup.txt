@@ -49,3 +49,5 @@
 /home/isaac/.steam
 /home/isaac/Music
 /home/isaac/Pictures
+/home/docker
+/home/isaac/elasticsearch*
